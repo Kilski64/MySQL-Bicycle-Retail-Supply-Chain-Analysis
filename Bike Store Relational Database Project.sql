@@ -90,15 +90,15 @@ CREATE TABLE orders (
 SHOW TABLES;
 
 -- INSERT EXCEL DATA INTO MYSQL --
-LOAD DATA INFILE 'C:\\Users\\bgkil\\Downloads\\mysql database analysis/brands.csv' INTO TABLE brands FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (brand_id, brand_name);
-LOAD DATA INFILE 'C:\\Users\\bgkil\\Downloads\\mysql database analysis/categories.csv' INTO TABLE categories FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (category_id, category_name);
-LOAD DATA INFILE 'C:\\Users\\bgkil\\Downloads\\mysql database analysis/customers.csv' INTO TABLE customers FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (customer_id, first_name, last_name, phone, email, street, city, state, zip_code);
-LOAD DATA INFILE 'C:\\Users\\bgkil\\Downloads\\mysql database analysis/orders.csv' INTO TABLE orders FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (order_id, customer_id, order_status, order_date, required_date, shipped_date, @store_id, staff_id) SET store_id = CASE WHEN @store_id REGEXP '^[0-9]+$' THEN @store_id ELSE NULL END;
-LOAD DATA INFILE 'C:\\Users\\bgkil\\Downloads\\mysql database analysis/order_items.csv' INTO TABLE order_items FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (order_id, item_id, product_id, quantity, list_price, discount);
-LOAD DATA INFILE 'C:\\Users\\bgkil\\Downloads\\mysql database analysis/products.csv' INTO TABLE products FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (product_id, product_name, brand_id, category_id, model_year, list_price);
-LOAD DATA INFILE 'C:\\Users\\bgkil\\Downloads\\mysql database analysis/staffs.csv' INTO TABLE staffs FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (staff_id, first_name, last_name, email, phone, active, store_id, @manager_id) SET manager_id = CASE WHEN @manager_id REGEXP '^[0-9]+$' THEN @manager_id ELSE NULL END;
-LOAD DATA INFILE 'C:\\Users\\bgkil\\Downloads\\mysql database analysis/stocks.csv' INTO TABLE stocks FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (store_id, product_id, quantity);
-LOAD DATA INFILE 'C:\\Users\\bgkil\\Downloads\\mysql database analysis/stores.csv' INTO TABLE stores FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (store_id, store_name, phone, email, street, city, state, zip_code);
+LOAD DATA INFILE 'C:\\Users\\user\\Downloads\\mysql database analysis/brands.csv' INTO TABLE brands FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (brand_id, brand_name);
+LOAD DATA INFILE 'C:\\Users\\user\\Downloads\\mysql database analysis/categories.csv' INTO TABLE categories FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (category_id, category_name);
+LOAD DATA INFILE 'C:\\Users\\user\\Downloads\\mysql database analysis/customers.csv' INTO TABLE customers FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (customer_id, first_name, last_name, phone, email, street, city, state, zip_code);
+LOAD DATA INFILE 'C:\\Users\\user\\Downloads\\mysql database analysis/orders.csv' INTO TABLE orders FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (order_id, customer_id, order_status, order_date, required_date, shipped_date, @store_id, staff_id) SET store_id = CASE WHEN @store_id REGEXP '^[0-9]+$' THEN @store_id ELSE NULL END;
+LOAD DATA INFILE 'C:\\Users\\user\\Downloads\\mysql database analysis/order_items.csv' INTO TABLE order_items FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (order_id, item_id, product_id, quantity, list_price, discount);
+LOAD DATA INFILE 'C:\\Users\\user\\Downloads\\mysql database analysis/products.csv' INTO TABLE products FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (product_id, product_name, brand_id, category_id, model_year, list_price);
+LOAD DATA INFILE 'C:\\Users\\user\\Downloads\\mysql database analysis/staffs.csv' INTO TABLE staffs FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (staff_id, first_name, last_name, email, phone, active, store_id, @manager_id) SET manager_id = CASE WHEN @manager_id REGEXP '^[0-9]+$' THEN @manager_id ELSE NULL END;
+LOAD DATA INFILE 'C:\\Users\\user\\Downloads\\mysql database analysis/stocks.csv' INTO TABLE stocks FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (store_id, product_id, quantity);
+LOAD DATA INFILE 'C:\\Users\\user\\Downloads\\mysql database analysis/stores.csv' INTO TABLE stores FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS (store_id, store_name, phone, email, street, city, state, zip_code);
 
 -- VIEW DATA IN TABLES--
 SELECT * FROM products LIMIT 5;
